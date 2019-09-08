@@ -61,9 +61,13 @@ const AnimalsList = () => {
     const newAnimalsList = removeAnimalByName(totalAnimalsList, animal.name);
     setTotalAnimalsList(newAnimalsList);
     // Recreating the global list
-    setGlobalList(getAnimalsTypeList(totalAnimalsList));
+    const globalAnimalsType = getAnimalsTypeList(newAnimalsList);
+    setGlobalList(globalAnimalsType);
     // Recreating the specific list
-    const animalsByType = getAnimalsByType(totalAnimalsList, animal.type);
+    const animalsByType = getAnimalsByType(newAnimalsList, animal.type);
+    if (!animalsByType.length) {
+        setIsSpecific(false);
+    }
     setSpecificList(animalsByType);
   };
 
