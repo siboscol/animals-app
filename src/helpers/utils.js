@@ -7,7 +7,7 @@ const groupBy = (key, array) =>
 
 const getAnimalsByType = (animals, type) => {
   const animalsGroupedByType = groupBy('type', animals);
-  return animalsGroupedByType[type];
+  return animalsGroupedByType[type] || [];
 };
 
 const removeAnimalByName = (animals, name) => {
