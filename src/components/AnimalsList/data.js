@@ -24,7 +24,7 @@ export default [
         diet: 'cat food',
         cry: 'Purr',
         feature: 'jumping',
-        image: 'http://78.media.tumblr.com/84f729a7130860dda9b7544664a36094/tumblr_nvgiskSmew1un7zabo3_r1_1280.jpg'
+        image: 'https://cdn2.thedogapi.com/images/HJOpge9Em_1280.jpg'
     },
     {
         name: 'fuffy',
@@ -33,7 +33,7 @@ export default [
         diet: 'cat food',
         cry: 'Purr',
         feature: 'jumping',
-        image: 'http://78.media.tumblr.com/84f729a7130860dda9b7544664a36094/tumblr_nvgiskSmew1un7zabo3_r1_1280.jpg'
+        image: 'https://cdn2.thedogapi.com/images/r12d7apV7.gif'
     },
     {
         name: 'fuffy',

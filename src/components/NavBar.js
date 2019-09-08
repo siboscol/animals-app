@@ -7,7 +7,7 @@ const NavBar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" color="inherit">
-                Animals web apps
+                Animals app
                 </Typography>
             </Toolbar>
         </AppBar>

@@ -11,7 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PetsIcon from '@material-ui/icons/Pets';
 import LocalDiningIcon from '@material-ui/icons/LocalDining';
-import NatureIcon from '@material-ui/icons/Nature';
+import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 200
   }
 });
 
@@ -57,7 +57,7 @@ const Animal = props => {
             <ListItem button>
               <ListItemIcon>
                 <Tooltip title={animal.cry} placement="right">
-                  <NatureIcon />
+                  <AudiotrackIcon />
                 </Tooltip>
               </ListItemIcon>
             </ListItem>
