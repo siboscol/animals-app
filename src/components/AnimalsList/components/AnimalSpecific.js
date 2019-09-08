@@ -10,7 +10,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PetsIcon from '@material-ui/icons/Pets';
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import EventIcon from '@material-ui/icons/Event';
 import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -21,38 +22,45 @@ const useStyles = makeStyles({
     maxWidth: 345
   },
   media: {
-    height: 200
+    height: 250
   }
 });
 
-const Animal = props => {
+const AnimalSpecific = props => {
   const { animal } = props;
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea onClick={() => props.onClick(animal.type)}>
         <CardMedia
+          component="img"
           className={classes.media}
           image={animal.image}
           title={animal.type}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {animal.type}
+            {animal.name}
           </Typography>
           <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
-              <ListItemIcon>
-                <LocalDiningIcon />
-              </ListItemIcon>
-              <ListItemText primary="Diet" />
-            </ListItem>
-            <ListItem button>
+          <ListItem button>
               <ListItemIcon>
                 <PetsIcon />
               </ListItemIcon>
-              <ListItemText primary="N. individual" />
+              <ListItemText primary={`Type: ${animal.type}`} />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <EventIcon />
+              </ListItemIcon>
+              <ListItemText primary={`Age: ${animal.age}`} />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <StarBorderIcon />
+              </ListItemIcon>
+              <ListItemText primary={`Feature: ${animal.feature}`} />
             </ListItem>
             <ListItem button>
               <ListItemIcon>
@@ -65,12 +73,12 @@ const Animal = props => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Add
+        <Button size="small" color="primary" onClick={() => props.onRemove(animal)}>
+          Remove
         </Button>
       </CardActions>
     </Card>
   );
 };
 
-export default Animal;
+export default AnimalSpecific;
