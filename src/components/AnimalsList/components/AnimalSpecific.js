@@ -32,7 +32,7 @@ const AnimalSpecific = props => {
 
   return (
     <Card className={classes.card}>
-      <CardActionArea onClick={() => props.onClick(animal.type)}>
+      <CardActionArea>
         <CardMedia
           component="img"
           className={classes.media}
