@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import AnimalGlobal from './components/AnimalGlobal';
 import AnimalSpecific from './components/AnimalSpecific';
 import AddAnimalDialog from './components/AddAnimalDialog';
+import SearchAnimalsType from './components/SearchAnimalsType';
 import animalsList from './data';
 import {
   getAnimalsTypeList,
@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
   },
   gridRoot: {
     flexGrow: 1
+  },
+  button: {
+    margin: theme.spacing(1)
   },
   bar: {
     display: 'flex',
@@ -45,12 +48,8 @@ const AnimalsList = () => {
   const [specificList, setSpecificList] = useState([]);
 
   // State to handle add new type of animal
-  const [animalType, setAnimalType] = React.useState({});
+  const [animalType, setAnimalType] = useState({});
   const [open, setOpen] = React.useState(false);
-
-  const handleSearch = e => {
-    console.log('Something typed', e);
-  };
 
   // Move to specific list of animals
   const handleSelectedType = type => {
@@ -66,9 +65,8 @@ const AnimalsList = () => {
   };
 
   const handleAddAnimal = newAnimal => {
-    console.log('Adding a new animal', newAnimal);
     setOpen(false);
-    const newTotalAnimalsList = totalAnimalsList.concat([newAnimal]);
+    const newTotalAnimalsList = totalAnimalsList.concat(Array.isArray(newAnimal) ? newAnimal : [newAnimal]);
     setTotalAnimalsList(newTotalAnimalsList);
     // Recreating the global list
     const globalAnimalsType = getAnimalsTypeList(newTotalAnimalsList);
@@ -77,7 +75,6 @@ const AnimalsList = () => {
 
   // Handler to remove an animal for both lists
   const removeAnimal = animal => {
-    console.log('Removing animal', animal);
     // Removing animal from the total list of animals
     const newAnimalsList = removeAnimalByName(totalAnimalsList, animal.name);
     setTotalAnimalsList(newAnimalsList);
@@ -99,15 +96,13 @@ const AnimalsList = () => {
     setIsSpecific(false);
   };
 
+  const addCollection = collection => {
+    handleAddAnimal(collection);
+  }
+
   return (
     <div className={classes.root}>
       <div className={classes.bar}>
-        <TextField
-          id="searchAnimalsType"
-          placeholder="Search for Animals type"
-          margin="normal"
-          onChange={handleSearch}
-        />
         <div className={classes.grow} />
         {isSpecific && (
           <Button className={classes.button} size="small" onClick={handleBack}>
@@ -115,6 +110,7 @@ const AnimalsList = () => {
             Back
           </Button>
         )}
+        {!isSpecific && <SearchAnimalsType onAddCollection={addCollection} />}
       </div>
       <Grid container className={classes.gridRoot} spacing={3}>
         {!isSpecific &&
