@@ -23,11 +23,39 @@ const getAnimalsTypeList = animals => {
       individuals: animalsGroupedByType[type].length,
       diet: animalsGroupedByType[type][0].diet,
       cry: animalsGroupedByType[type][0].cry,
-      image: `/images/Types/${type}.jpg`
+      image: !animalsGroupedByType[type][0].isGeneric ? `/images/Types/${type}.jpg` : '/images/Types/GenericSpecies.jpg'
     };
     globalTypesList.push(globalType);
   }
   return globalTypesList;
 };
 
-export { getAnimalsTypeList, removeAnimalByName, getAnimalsByType };
+const callAPI = async (url) => {
+  if (url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  }
+};
+
+const fetchSpecies = async () => {
+  const url = 'http://api.gbif.org/v1/species';
+  const res = await callAPI(url);
+  return res;
+};
+
+const fetchCollection = async query => {
+  if (query) {
+    const url = `http://api.gbif.org/v1/species/${query}/children`;
+    const res = await callAPI(url);
+    return res;
+  }
+};
+
+export {
+  getAnimalsTypeList,
+  removeAnimalByName,
+  getAnimalsByType,
+  fetchSpecies,
+  fetchCollection
+};

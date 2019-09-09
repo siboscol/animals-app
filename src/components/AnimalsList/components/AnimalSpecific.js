@@ -64,7 +64,7 @@ const AnimalSpecific = props => {
             </ListItem>
             <ListItem button>
               <ListItemIcon>
-                <Tooltip title={animal.cry} placement="right">
+                <Tooltip title={animal.cry || ''} placement="right">
                   <AudiotrackIcon />
                 </Tooltip>
               </ListItemIcon>
