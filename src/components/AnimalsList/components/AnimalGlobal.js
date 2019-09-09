@@ -29,8 +29,6 @@ const AnimalGlobal = props => {
   const { animal } = props;
   const classes = useStyles();
 
-  console.log(animal);
-
   return (
     <Card className={classes.card}>
       <CardActionArea onClick={() => props.onTypeClick(animal.type)}>
@@ -69,7 +67,7 @@ const AnimalGlobal = props => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={() => props.onAdd}>
+        <Button size="small" color="primary" onClick={() => props.onAdd(animal)}>
           Add
         </Button>
       </CardActions>

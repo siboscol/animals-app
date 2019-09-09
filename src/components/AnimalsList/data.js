@@ -163,57 +163,57 @@ export default [
     },
     {
         name: 'Ariel',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Ariel.jpg'
+        image: '/images/Fishes/Ariel.jpg'
     },
     {
         name: 'Buffy',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Buffy.jpg'
+        image: '/images/Fishes/Buffy.jpg'
     },
     {
         name: 'Comet',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Comet.jpg'
+        image: '/images/Fishes/Comet.jpg'
     },
     {
         name: 'Crimson',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Crimson.jpg'
+        image: '/images/Fishes/Crimson.jpg'
     },
     {
         name: 'Deb',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Deb.jpg'
+        image: '/images/Fishes/Deb.jpg'
     },
     {
         name: 'Rio',
-        type: 'Fish',
+        type: 'Fishes',
         age: 1,
         diet: 'Worms',
         cry: 'Pops',
         feature: 'Swim',
-        image: '/images/Fish/Rio.jpg'
+        image: '/images/Fishes/Rio.jpg'
     },
     {
         name: 'Betty',
