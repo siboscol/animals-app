@@ -47,7 +47,7 @@ const AnimalGlobal = props => {
               <ListItemIcon>
                 <LocalDiningIcon />
               </ListItemIcon>
-              <ListItemText primary={`Diet: ${animal.diet}`} />
+              <ListItemText primary={`Diet: ${animal.diet || ''}`} />
             </ListItem>
             <ListItem button>
               <ListItemIcon>

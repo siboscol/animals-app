@@ -48,19 +48,19 @@ const AnimalSpecific = props => {
               <ListItemIcon>
                 <PetsIcon />
               </ListItemIcon>
-              <ListItemText primary={`Type: ${animal.type}`} />
+              <ListItemText primary={`Type: ${animal.type || ''}`} />
             </ListItem>
             <ListItem button>
               <ListItemIcon>
                 <EventIcon />
               </ListItemIcon>
-              <ListItemText primary={`Age: ${animal.age}`} />
+              <ListItemText primary={`Age: ${animal.age || 1}`} />
             </ListItem>
             <ListItem button>
               <ListItemIcon>
                 <StarBorderIcon />
               </ListItemIcon>
-              <ListItemText primary={`Feature: ${animal.feature}`} />
+              <ListItemText primary={`Feature: ${animal.feature || ''}`} />
             </ListItem>
             <ListItem button>
               <ListItemIcon>
